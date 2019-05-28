@@ -1,5 +1,7 @@
 package com.example.stocksapp.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -8,6 +10,7 @@ import javax.persistence.StoredProcedureQuery;
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.example.stocksapp.models.Prices;
@@ -15,9 +18,9 @@ import com.example.stocksapp.models.Stocks;
 
 @Repository
 @Transactional
-public interface StocksAppRepo extends JpaRepository<Prices,Integer>{
+public interface StocksAppRepo extends JpaRepository<Stocks,Integer>{
 	
-	public Prices findBySymbol();
+	public Stocks findByStockName(String symbol);
 	
 	
 //	@PersistenceContext
