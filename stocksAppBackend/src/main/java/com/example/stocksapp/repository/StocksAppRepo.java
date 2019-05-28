@@ -1,11 +1,41 @@
 package com.example.stocksapp.repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.StoredProcedureQuery;
+import javax.transaction.Transactional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.example.stocksapp.models.Stocks;
 
 @Repository
-public interface StocksAppRepo extends JpaRepository<Stocks, Integer>{
+@Transactional
+public class StocksAppRepo {
+	
+//	@PersistenceContext
+//	EntityManager entityManager;
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StocksBusiness");
+	EntityManager entityManager = emf.createEntityManager();
+    	 
+	public void findCarsByYearWithNamedStored() {
+		
+		System.out.println(entityManager);
+		
+	    StoredProcedureQuery findByYearProcedure = 
+	      entityManager.createStoredProcedureQuery("getPricePoints");
+	     
+	    
+	    
+	    StoredProcedureQuery storedProcedure = 
+	      findByYearProcedure.setParameter("c_name", "1347 Property Insurance Holdings, Inc.");
+	     
+	    System.out.println(storedProcedure.getResultList().toString()); 
+	       
+	}
 	
 }
+	

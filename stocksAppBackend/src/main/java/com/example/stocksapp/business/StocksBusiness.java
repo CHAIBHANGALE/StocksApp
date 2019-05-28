@@ -1,5 +1,7 @@
 package com.example.stocksapp.business;
 
+import javax.ejb.EJB;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.stocksapp.repository.StocksAppRepo;
