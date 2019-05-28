@@ -11,13 +11,12 @@ import com.example.stocksapp.repository.StocksAppRepo;
 @SpringBootApplication
 public class CreditCardStatementsAppApplication {
 
-	
-	private static com.example.stocksapp.repository.StocksAppRepo stocksAppRepo = new StocksAppRepo();
+	//private static com.example.stocksapp.repository.StocksAppRepo stocksAppRepo = new StocksAppRepo();
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CreditCardStatementsAppApplication.class, args);
 		
-		stocksAppRepo.findCarsByYearWithNamedStored();
+		//stocksAppRepo.findCarsByYearWithNamedStored();
 	}
 
 }

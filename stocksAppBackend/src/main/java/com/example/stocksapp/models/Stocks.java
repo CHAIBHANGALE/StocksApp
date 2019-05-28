@@ -32,4 +32,13 @@ public class Stocks {
 	private String marketCap;
 	private String sector;
 	private String industry;
+	
+	
+	@Override
+	public String toString() {
+		return "\nPerson [Id=" + stockId + ", =" + symbol + ", stockName=" + stockName + ","
+				+ " marketCap=" + marketCap + " sector=" + sector + " industry=" + industry
+				+ "]";
+		
+	}
 }

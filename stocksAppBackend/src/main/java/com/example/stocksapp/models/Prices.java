@@ -28,4 +28,12 @@ public class Prices {
 	@JoinColumn(name = "stockId")
 	private Stocks stock;
 	
+	@Override
+	public String toString() {
+		return "\nPricesOfStock [stock=" + stock.toString() + ", =" + open + ", close=" + close + ","
+				+ " low=" + low + " high=" + high + " volume=" + volume
+				+ "]";
+		
+	}
+	
 }

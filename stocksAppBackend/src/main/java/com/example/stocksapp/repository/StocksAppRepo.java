@@ -10,32 +10,36 @@ import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.stocksapp.models.Prices;
 import com.example.stocksapp.models.Stocks;
 
 @Repository
 @Transactional
-public class StocksAppRepo {
+public interface StocksAppRepo extends JpaRepository<Prices,Integer>{
+	
+	public Prices findBySymbol();
+	
 	
 //	@PersistenceContext
 //	EntityManager entityManager;
-	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StocksBusiness");
-	EntityManager entityManager = emf.createEntityManager();
-    	 
-	public void findCarsByYearWithNamedStored() {
-		
-		System.out.println(entityManager);
-		
-	    StoredProcedureQuery findByYearProcedure = 
-	      entityManager.createStoredProcedureQuery("getPricePoints");
-	     
-	    
-	    
-	    StoredProcedureQuery storedProcedure = 
-	      findByYearProcedure.setParameter("c_name", "1347 Property Insurance Holdings, Inc.");
-	     
-	    System.out.println(storedProcedure.getResultList().toString()); 
-	       
-	}
+//	EntityManagerFactory emf = Persistence.createEntityManagerFactory("StocksBusiness");
+//	EntityManager entityManager = emf.createEntityManager();
+//    	 
+//	public void findCarsByYearWithNamedStored() {
+//		
+//		System.out.println(entityManager);
+//		
+//	    StoredProcedureQuery findByYearProcedure = 
+//	      entityManager.createStoredProcedureQuery("getPricePoints");
+//	     
+//	    
+//	    
+//	    StoredProcedureQuery storedProcedure = 
+//	      findByYearProcedure.setParameter("c_name", "1347 Property Insurance Holdings, Inc.");
+//	     
+//	    System.out.println(storedProcedure.getResultList().toString()); 
+//	       
+//	}
 	
 }
 	
