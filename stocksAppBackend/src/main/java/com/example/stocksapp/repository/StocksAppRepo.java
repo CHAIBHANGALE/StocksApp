@@ -1,5 +1,6 @@
 package com.example.stocksapp.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import com.example.stocksapp.models.FilterModel;
 import com.example.stocksapp.models.Prices;
 import com.example.stocksapp.models.Stocks;
 
@@ -21,6 +23,9 @@ import com.example.stocksapp.models.Stocks;
 public interface StocksAppRepo extends JpaRepository<Stocks,Integer>{
 	
 	public Stocks findByStockName(String symbol);
+	
+	@Query("SELECT * FROM Prices p where date > ?1 and date<?2 order by (p.high - p.close) desc")
+	public List<Prices> getBestandWorstByDate(Date startDate,Date endDate);
 	
 	
 //	@PersistenceContext

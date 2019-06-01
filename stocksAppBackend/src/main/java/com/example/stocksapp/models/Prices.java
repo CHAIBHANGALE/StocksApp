@@ -31,11 +31,11 @@ public class Prices {
 	@JoinColumn(name = "stockId")
 	private Stocks stockPrice;
 	
-	@Override
-	public String toString() {
-		return "\nPricesOfStock [prices="  + ", =" + open + ", close=" + close + ","
-				+ " low=" + low + " high=" + high + " volume=" + volume
-				+ "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "\nPricesOfStock [prices="  + ", =" + open + ", close=" + close + ","
+//				+ " low=" + low + " high=" + high + " volume=" + volume
+//				+ "]";
+//	}
 	
 }

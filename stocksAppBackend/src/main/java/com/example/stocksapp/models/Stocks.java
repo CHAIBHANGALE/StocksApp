@@ -51,11 +51,11 @@ public class Stocks {
 	
 	
 	
-	@Override
-	public String toString() {
-		return "\nPerson [Id=" + stockId + ", =" + symbol + ", stockName=" + stockName + ","
-				+ " marketCap=" + marketCap + " sector=" + sector + " industry=" + industry
-				+ " prices=" + prices+"]";
-		
-	}
+//	@Override
+//	public String toString() {
+//		return "\nPerson [Id=" + stockId + ", =" + symbol + ", stockName=" + stockName + ","
+//				+ " marketCap=" + marketCap + " sector=" + sector + " industry=" + industry
+//				+ " prices=" + prices+"]";
+//		
+//	}
 }
